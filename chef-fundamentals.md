@@ -1,8 +1,12 @@
 # Chef Fundamentals
 
+These notes are intended for use with Amazon Web Services (AWS).
+
 ## 1. Install Chef on your local workstation
 
-To install Chef on your workstation, regardless of OS.
+Download the Chef Development Kit (Chef DK): [https://downloads.chef.io/chef-dk/](https://downloads.chef.io/chef-dk/)
+
+To install Chef on your workstation, regardless of OS. This command will work on Windows or Mac.
 
     chef gem install knife-windows --no-ri --no-rdoc -V
 
@@ -59,6 +63,25 @@ You don't need to use the PEM.
 
 1. Go to [manage.chef.io](https://manage.chef.io/) and check that your node showed up in your Organization
 2. Check if you node shows up in the command line with `knife node list`
+
+And that's it!
+
+## On AWS, Use `sudo`
+
+You'll need to use `sudo` to edit files like `/etc/chef/client.rb` and `chef-client`
+
+## Converging
+
+Convergance means ....
+
+To converget the node with the Chef server, use:
+
+    chef-client
+
+But because of permissions issues noted above, you'll need to use:
+
+    sudo chef-client
+
 
 
 
